@@ -59,14 +59,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Accounts\AccountType.cs" />
+    <Compile Include="Accounts\CurrencyType.cs" />
+    <Compile Include="Common\ApplicationUser.cs" />
+    <Compile Include="Accounts\BankAccount.cs" />
+    <Compile Include="Common\ApplyForm.cs" />
+    <Compile Include="Common\Feedback.cs" />
+    <Compile Include="Common\NewsArticle.cs" />
+    <Compile Include="Common\RightType.cs" />
+    <Compile Include="Common\RightContainer.cs" />
+    <Compile Include="Customers\Company.cs" />
+    <Compile Include="Customers\Customer.cs" />
+    <Compile Include="Customers\Individual.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transactions\BudgetPayment.cs" />
+    <Compile Include="Transactions\LocalPayment.cs" />
+    <Compile Include="Transactions\Payment.cs" />
+    <Compile Include="Transactions\Transaction.cs" />
+    <Compile Include="Transactions\TransactionType.cs" />
+    <Compile Include="Transactions\TransferPayment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Lazybank.Common\Lazybank.Common.csproj">
+      <Project>{701f322f-aa01-4ddc-90b6-6935981c1e73}</Project>
+      <Name>Lazybank.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lazybank.Data.Common\Lazybank.Data.Common.csproj">
       <Project>{edfe3c57-ef5b-4636-9ecc-d0baca6b6379}</Project>
       <Name>Lazybank.Data.Common</Name>
@@ -82,6 +103,7 @@
       <Link>stylecop.json</Link>
     </AdditionalFiles>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -9,13 +9,37 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using Lazybank.Data.Models;
+    using Migrations;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
+
+        public IDbSet<BankAccount> Accounts { get; set; }
+
+        public IDbSet<Company> Companies { get; set; }
+
+        public IDbSet<Individual> Individuals { get; set; }
+
+        public IDbSet<NewsArticle> Articles { get; set; }
+
+        public IDbSet<ApplyForm> ApplyForms { get; set; }
+
+        public IDbSet<Feedback> Feedbacks { get; set; }
+
+        public IDbSet<Transaction> Transactions { get; set; }
+
+        public IDbSet<BudgetPayment> Budgetpayments { get; set; }
+
+        public IDbSet<LocalPayment> LocalPayments { get; set; }
+
+        public IDbSet<TransferPayment> TransferPayments { get; set; }
+
+        public IDbSet<RightContainer> Rights { get; set; }
 
         public static ApplicationDbContext Create()
         {
