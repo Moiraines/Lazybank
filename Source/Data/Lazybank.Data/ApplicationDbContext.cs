@@ -25,6 +25,12 @@
 
         public IDbSet<Individual> Individuals { get; set; }
 
+        public IDbSet<NewsArticle> Articles { get; set; }
+
+        public IDbSet<ApplyForm> ApplyForms { get; set; }
+
+        public IDbSet<Feedback> Feedbacks { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

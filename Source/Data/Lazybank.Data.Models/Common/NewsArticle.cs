@@ -21,9 +21,9 @@ namespace Lazybank.Data
         [MaxLength(GlobalConstants.ArticleTitleMaxLength)]
         public string Title { get; set; }
 
-        public string CreatorId { get; set; }
+        public string AuthorId { get; set; }
 
-        public virtual ApplicationUser Creator { get; set; }
+        public virtual ApplicationUser Author { get; set; }
 
         public string ImageUrl { get; set; }
     }

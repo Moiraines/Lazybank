@@ -8,7 +8,7 @@ namespace Lazybank.Data.Models
 {
     public enum RightType
     {
-        Info,
-        Sign
+        Passive,
+        Active
     }
 }
