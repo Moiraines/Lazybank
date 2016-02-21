@@ -10,10 +10,12 @@
     public abstract class Customer : BaseModel<int>
     {
         private ICollection<BankAccount> accounts;
+        private ICollection<ApplicationUser> users;
 
         public Customer()
         {
             this.accounts = new HashSet<BankAccount>();
+            this.users = new HashSet<ApplicationUser>();
             this.CreatedOn = DateTime.Now;
         }
 
@@ -38,6 +40,19 @@
             set
             {
                 this.accounts = value;
+            }
+        }
+
+        public virtual ICollection<ApplicationUser> Users
+        {
+            get
+            {
+                return this.users;
+            }
+
+            set
+            {
+                this.users = value;
             }
         }
     }

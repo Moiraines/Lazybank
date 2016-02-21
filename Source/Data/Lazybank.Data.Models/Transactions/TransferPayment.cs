@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lazybank.Data.Models
 {
-    class Transfer
+    public class TransferPayment : Payment
     {
     }
 }

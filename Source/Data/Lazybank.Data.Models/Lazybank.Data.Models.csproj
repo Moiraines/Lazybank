@@ -76,6 +76,7 @@
     <Compile Include="Transactions\LocalPayment.cs" />
     <Compile Include="Transactions\Payment.cs" />
     <Compile Include="Transactions\Transaction.cs" />
+    <Compile Include="Transactions\TransactionType.cs" />
     <Compile Include="Transactions\TransferPayment.cs" />
   </ItemGroup>
   <ItemGroup>

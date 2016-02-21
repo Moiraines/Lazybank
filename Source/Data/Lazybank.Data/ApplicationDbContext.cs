@@ -31,6 +31,16 @@
 
         public IDbSet<Feedback> Feedbacks { get; set; }
 
+        public IDbSet<Transaction> Transactions { get; set; }
+
+        public IDbSet<BudgetPayment> Budgetpayments { get; set; }
+
+        public IDbSet<LocalPayment> LocalPayments { get; set; }
+
+        public IDbSet<TransferPayment> TransferPayments { get; set; }
+
+        public IDbSet<RightContainer> Rights { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

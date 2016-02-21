@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lazybank.Data.Models
 {
-    class LocalPayment
+    public class LocalPayment : Payment
     {
     }
 }
