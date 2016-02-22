@@ -1,0 +1,22 @@
+﻿@using Lazybank.Common;
+
+@model Lazybank.Web.ViewModels.NewsArticleViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Title</h2>
+<p class="lead text-muted"> @Model.CreatedOn</p>
+<div class="row container text-justify" style="padding-right: 40px">
+    <div class="well jumbotron">
+        <div class="row">
+            <img src="@(Model.ImageUrl ?? GlobalConstants.DefaultImageNewsArticle)" width="150" style="float: left; margin-right: 20px;" />
+            <span class="lead">
+                @Model.Content
+            </span>
+        </div>
+    </div>
+</div>
+@Html.ActionLink("The News", "Index", "NewsArticles", new { area = "Public" }, new { @class = "btn btn-outline btn-success" })
+<br />
+<br />

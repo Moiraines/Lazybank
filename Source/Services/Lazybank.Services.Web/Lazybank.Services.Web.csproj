@@ -47,6 +47,7 @@
     <Compile Include="ICacheService.cs" />
     <Compile Include="IdentifierProvider.cs" />
     <Compile Include="IIdentifierProvider.cs" />
+    <Compile Include="NewsArticleImageUploadProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

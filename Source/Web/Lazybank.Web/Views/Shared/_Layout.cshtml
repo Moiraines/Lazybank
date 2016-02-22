@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Lazybank.Common;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,9 +14,9 @@
     @Scripts.Render("~/bundles/kendo")
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div style="width:960px;" class="header">
-            <img style=";padding-left:0px;margin-left:0px;" width="930px" src="../../img/header.png">
+            <img style=";padding-left:0px;margin-left:0px;" width="930px" src="~/img/header.png">
 
             <div style="height:25px;padding-top: 0px;margin-top: 0px;padding-bottom: 7px">
                 <table style="width:100%;padding-top: 0px;margin-top: 0px;vertical-align:text-top">
@@ -29,26 +31,37 @@
 
             <br /><br /><br />
             <div id="hero">
-                <div class="current"><img height="300px;" width="930px" src="img/bank4.jpg"></div>
-                <div><img height="300px;" width="930px" src="../../img/bank2.jpg"></div>
-                <div><img height="300px;" width="930px" src="../../img/bank1.jpg"></div>
-                <div><img height="300px;" width="930px" src="../../img/bank3_people.jpg"></div>
+                <div class="current"><img height="300px;" width="930px" src="~/img/bank4.jpg"></div>
+                <div><img height="300px;" width="930px" src="~/img/bank2.jpg"></div>
+                <div><img height="300px;" width="930px" src="~/img/bank1.jpg"></div>
+                <div><img height="300px;" width="930px" src="~/img/bank3_people.jpg"></div>
             </div>
         </div>
 
         <nav class="main-navigation" role="navigation">
-            <div style="padding-left:120px;">
+            <div style="padding-left:40px;">
                 <ul id="menu-main-menu" class="nav-menu">
 
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
 
-                    <li>@Html.ActionLink("View Check Image", "CheckImageRequest", "Customer")</li>
-                    <li>@Html.ActionLink("Check Account", "CheckAccountInput", "Customer")</li>
-                    <li>@Html.ActionLink("Set-up Alert", "SetUpAlert", "Customer")</li>
+                    @* Public part *@
+                    <li>@Html.ActionLink("Send Feedback", "Index", "Home", new { area = "Public" }, null)</li>
+                    <li>@Html.ActionLink("News", "Index", "NewsArticles", new { area = "Public" }, null)</li>
 
-                    <li>@Html.ActionLink("Update Profile", "CustomerProfileInput", "Customer")</li>
-                    <li>@Html.ActionLink("Transfer Funds", "TransferFunds", "Customer")</li>
-                    <li>@Html.ActionLink("Account Statement", "AccountStatement", "Customer")</li>
+                    @* Private part *@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Accounts Information", "", "Customer", new { area = string.Empty }, null)</li>
+                        <li>@Html.ActionLink("Transactions", "TransferFunds", "Customer", new { area = string.Empty }, null)</li>
+                        <li>@Html.ActionLink("Update Profile", "", "Manage", new { area = string.Empty }, null)</li>
+                    }
+
+                    @* Admin part *@
+                    @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
+                    {
+                        <li>@Html.ActionLink("Create Article", "Create", "NewsArticles", new { area = "Public" }, null)</li>
+                        <li>@Html.ActionLink("Feedbacks", "Index", "Feedbacks", new { area = "Administration" }, null)</li>
+                    }
                 </ul>
             </div>
         </nav>
@@ -64,45 +77,6 @@
             Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
         </div>
     </div>
-
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Lazybank", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-
-        <div id="hero">
-            <div class="current"><img height="300px;" width="930px" src="img/bank4.jpg"></div>
-            <div><img height="300px;" width="930px" src="../../img/bank2.jpg"></div>
-            <div><img height="300px;" width="930px" src="../../img/bank1.jpg"></div>
-            <div><img height="300px;" width="930px" src="../../img/bank3_people.jpg"></div>
-        </div>
-
-        <hr />
-        <footer>
-            <div style="display:block;" class="footer">
-                &copy; @DateTime.Now.Year - Lazybank<br><br>
-                The KSJ Bank is a fictitious brand created by us solely for the purpose of training. All products and people associated with KSJ Bank are also fictitious.
-                Any resemblance to real brands, products, or people is purely coincidental.
-                Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
-            </div>
-        </footer>
-    </div>*@
 
     <script type="text/javascript">
          $(function () {
