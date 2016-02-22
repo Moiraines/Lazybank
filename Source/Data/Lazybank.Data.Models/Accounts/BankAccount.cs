@@ -39,11 +39,11 @@
         [Required]
         public AccountType Type { get; set; }
 
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
 
         public virtual Company Company { get; set; }
 
-        public int IndividualId { get; set; }
+        public int? IndividualId { get; set; }
 
         public virtual Individual Individual { get; set; }
 

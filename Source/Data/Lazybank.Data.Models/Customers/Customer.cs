@@ -28,7 +28,7 @@
         [Range(100000000, 999999999)]
         public int ClientNumber { get; set; }
 
-        public int Address { get; set; }
+        public string Address { get; set; }
 
         public virtual ICollection<BankAccount> Accounts
         {
