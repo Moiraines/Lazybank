@@ -14,7 +14,7 @@
     @Scripts.Render("~/bundles/kendo")
 </head>
 <body>
-    <div class="container-fluid">
+   <div class="container-fluid">
         <div style="width:960px;" class="header">
             <img style=";padding-left:0px;margin-left:0px;" width="930px" src="~/img/header.png">
 
@@ -28,7 +28,6 @@
                     </tr>
                 </table>
             </div>
-
             <br /><br /><br />
             <div id="hero">
                 <div class="current"><img height="300px;" width="930px" src="~/img/bank4.jpg"></div>
@@ -38,6 +37,13 @@
             </div>
         </div>
 
+       @if (this.TempData["Notification"] != null)
+       {
+           <div class="alert alert-success" role="alert">
+               @this.TempData["Notification"]
+           </div>
+       }
+
         <nav class="main-navigation" role="navigation">
             <div style="padding-left:40px;">
                 <ul id="menu-main-menu" class="nav-menu">
@@ -45,7 +51,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
 
                     @* Public part *@
-                    <li>@Html.ActionLink("Send Feedback", "Index", "Home", new { area = "Public" }, null)</li>
+                    <li>@Html.ActionLink("Send Feedback", "Create", "Feedbacks", new { area = "Public" }, null)</li>
                     <li>@Html.ActionLink("News", "Index", "NewsArticles", new { area = "Public" }, null)</li>
 
                     @* Private part *@

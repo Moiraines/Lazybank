@@ -9,5 +9,7 @@
         IQueryable<Feedback> GetAll();
 
         Feedback GetById(int id);
+
+        int Create(Feedback modelToSave);
     }
 }
