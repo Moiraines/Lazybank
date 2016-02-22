@@ -13,6 +13,7 @@ namespace Lazybank.Data
     public class NewsArticle : BaseModel<int>
     {
         [Required]
+        [DataType(DataType.MultilineText)]
         [MinLength(GlobalConstants.ArticleContentMinLength)]
         public string Content { get; set; }
 

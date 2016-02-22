@@ -59,7 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IUsersService.cs" />
+    <Compile Include="Contracts\IFeedbacksService.cs" />
+    <Compile Include="Contracts\INewsArticlesService.cs" />
+    <Compile Include="Contracts\IUsersService.cs" />
+    <Compile Include="NewsArticlesService.cs" />
+    <Compile Include="FeedbacksService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersService.cs" />
   </ItemGroup>

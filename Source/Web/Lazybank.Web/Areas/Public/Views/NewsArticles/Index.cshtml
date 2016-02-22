@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Lazybank.Web.ViewModels.NewsArticleViewModel>
+@{
+    ViewBag.Title = "News";
+}
+<div class="container">
+    @foreach (var article in Model)
+    {
+        <div class="row">
+            <div class="col-md-12" style="padding-right:30px">
+                <div class="row">
+                    <h4>
+                        <a href="@Url.Action("Details", "NewsArticles", new { id = article.Id, name = article.Title, area = "Public" })">@article.Title</a>
+                    </h4>
+                </div>
+                <div class="row">
+                    <p>@Html.Raw(article.SanitizedContent)</p>
+                </div>               
+            </div>
+        </div>
+        <hr />
+    }
+</div>
