@@ -44,6 +44,9 @@
       <HintPath>..\..\packages\HtmlSanitizer.3.1.93\lib\net45\HtmlSanitizer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>D:\Downloads\Kendo.Mvc\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -98,6 +101,7 @@
     <Compile Include="Filters\ApplicationVersionHeader.cs" />
     <Compile Include="HtmlSanitizerAdapter.cs" />
     <Compile Include="ISanitizer.cs" />
+    <Compile Include="KendoHelpers.cs" />
     <Compile Include="Mapping\AutoMapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Mapping\IMapFrom{T}.cs" />

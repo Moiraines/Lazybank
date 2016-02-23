@@ -207,6 +207,7 @@
     <Compile Include="Areas\Public\Controllers\NewsArticlesController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BalanceCheckController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -223,6 +224,10 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\BalanceViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\BankAccountViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\IndividualViewModel.cs" />
     <Compile Include="ViewModels\Feedback\FeedbackInputModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
@@ -416,6 +421,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Views\BalanceCheck\Index.cshtml" />
+    <Content Include="Views\BalanceCheck\_PartialBalance.cshtml" />
+    <Content Include="Views\BalanceCheck\EditorTemplates\Currency.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

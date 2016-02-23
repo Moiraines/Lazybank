@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankAccountsService.cs" />
+    <Compile Include="Contracts\IBankAccountsService.cs" />
     <Compile Include="Contracts\IFeedbacksService.cs" />
     <Compile Include="Contracts\INewsArticlesService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />

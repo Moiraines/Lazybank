@@ -57,16 +57,38 @@
                     @* Private part *@
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Accounts Information", "", "Customer", new { area = string.Empty }, null)</li>
-                        <li>@Html.ActionLink("Transactions", "TransferFunds", "Customer", new { area = string.Empty }, null)</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts Information<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Balance", "Index", "BalanceCheck", new { area = string.Empty }, null)</li>
+                                <li>@Html.ActionLink("Movements", "Index", "MovementCheck", new { area = string.Empty }, null)</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Local Currency", "Index", "", new { area = string.Empty }, null)</li>
+                                <li>@Html.ActionLink("Budget Payments", "Index", "", new { area = string.Empty }, null)</li>
+                                <li>@Html.ActionLink("Transfers", "Index", "", new { area = string.Empty }, null)</li>
+                                <li>@Html.ActionLink("Orders Management", "Index", "", new { area = string.Empty }, null)</li>
+                                <li>@Html.ActionLink("Orders Archive", "Index", "", new { area = string.Empty }, null)</li>
+                            </ul>
+                        </li>
+
                         <li>@Html.ActionLink("Update Profile", "", "Manage", new { area = string.Empty }, null)</li>
                     }
 
                     @* Admin part *@
                     @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                     {
-                        <li>@Html.ActionLink("Create Article", "Create", "NewsArticles", new { area = "Public" }, null)</li>
-                        <li>@Html.ActionLink("Feedbacks", "Index", "Feedbacks", new { area = "Administration" }, null)</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Panel<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Create Article", "Create", "NewsArticles", new { area = "Public" }, null)</li>
+                                <li>@Html.ActionLink("Feedbacks", "Index", "Feedbacks", new { area = "Administration" }, null)</li>
+                            </ul>
+                        </li>
+                        
                     }
                 </ul>
             </div>

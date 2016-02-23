@@ -1,0 +1,13 @@
+﻿@using Lazybank.Web.Infrastructure;
+@model IEnumerable<Lazybank.Web.ViewModels.BankAccountViewModel>
+
+
+@(Html.FullFeaturedGrid<Lazybank.Web.ViewModels.BankAccountViewModel>(
+    "BalanceCheck",
+    m => m.Id,
+    columns =>
+    {
+    columns.Bound(col => col.Number);
+    columns.Bound(col => col.Balance).EditorTemplateName("Currency");
+    columns.Bound(col => col.Currency);
+}))

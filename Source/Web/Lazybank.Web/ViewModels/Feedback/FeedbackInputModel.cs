@@ -7,6 +7,7 @@
     using Lazybank.Data;
     using Lazybank.Web.Infrastructure.Mapping;
     using System.Web.Mvc;
+
     public class FeedbackInputModel : IMapTo<Lazybank.Data.Models.Feedback>
     {
         [Required]
