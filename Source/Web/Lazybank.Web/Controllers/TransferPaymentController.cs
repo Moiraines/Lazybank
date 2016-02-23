@@ -71,7 +71,6 @@ namespace Lazybank.Web.Controllers
             newPayment.Status = StatusType.Completed;
             this.payments.Create(newPayment);
 
-
             // TODO: Extract Copy Transaction logic
             var transaction = new Transaction
             {

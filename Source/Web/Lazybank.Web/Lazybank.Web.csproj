@@ -209,6 +209,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BalanceCheckController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
@@ -435,6 +436,8 @@
     <Content Include="Views\TransferPayment\Index.cshtml" />
     <Content Include="Views\TransferPayment\Create.cshtml" />
     <Content Include="Views\TransferPayment\Details.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\InternalServer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

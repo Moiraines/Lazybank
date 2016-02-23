@@ -1,8 +1,16 @@
 ﻿@model HandleErrorInfo
 
 @{
-    ViewBag.Title = "Error";
+    ViewBag.Title = "Not Found";
 }
 
+@model HandleErrorInfo
+@{
+    ViewBag.Title = "Error";
+}
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
+@if (this.TempData["Global Error Message"] != null)
+{
+    <div class="alert alert-danger">@this.TempData["Global Error Message"]</div>
+}
