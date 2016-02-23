@@ -212,6 +212,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
+    <Compile Include="Controllers\TransactionCheckController.cs" />
+    <Compile Include="Controllers\TransferPaymentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -433,6 +435,8 @@
     <Folder Include="Areas\Public\Models\" />
     <Folder Include="Areas\Public\Views\Shared\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\TransactionCheck\" />
+    <Folder Include="Views\TransferPayment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
