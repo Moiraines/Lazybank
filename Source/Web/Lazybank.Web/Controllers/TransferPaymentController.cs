@@ -31,14 +31,14 @@ namespace Lazybank.Web.Controllers
         {
             var userId = this.User.Identity.GetUserId();
             var currentUser = this.users.GetById(userId);
-            var viewModel = this.Mapper.Map<BalanceViewModel>(currentUser);
-
-            return this.View(viewModel);
+            var globalmodel = new OutputPaymentModel();
+            globalmodel.User = this.Mapper.Map<UserForPaymentsViewModel>(currentUser);
+            return this.View(globalmodel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(BalanceViewModel globalModel)
+        public ActionResult Create(OutputPaymentModel globalModel)
         {
             if (!this.ModelState.IsValid)
             {

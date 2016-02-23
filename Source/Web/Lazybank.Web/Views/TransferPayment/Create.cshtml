@@ -1,7 +1,7 @@
 ﻿@using Lazybank.Web.ViewModels
 @using Lazybank.Web.Helpers
 
-@model BalanceViewModel
+@model OutputPaymentModel
 @{
     ViewBag.Title = "Make Transfer";
 }
@@ -29,11 +29,11 @@
         <div class="row form-group">
             @Html.Label("Ordering Name", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
-                @Html.DropDownListFor(x => x.TransferPayment.OrderingName, DropdownListGenerator.CustomerNamesGenerator(Model.Individuals), new { @class = "form-control", id = "cb-currency" })
+                @Html.DropDownListFor(x => x.TransferPayment.OrderingName, DropdownListGenerator.CustomerNamesGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
             </div>
             @Html.Label("Ordering Account", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">                
-                @Html.DropDownListFor(x => x.TransferPayment.OrderingAccount, DropdownListGenerator.AccountNumbersGenerator(Model.Individuals), new { @class = "form-control", id = "cb-currency" })
+                @Html.DropDownListFor(x => x.TransferPayment.OrderingAccount, DropdownListGenerator.AccountNumbersGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
             </div>
         </div>
         <div class="form-group">
@@ -46,14 +46,14 @@
         <div class="form-group">
             @Html.Label("Beneficary Name", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
-                @Html.DropDownListFor(x => x.TransferPayment.BeneficiaryName, DropdownListGenerator.CustomerNamesGenerator(Model.Individuals), new { @class = "form-control", id = "cb-currency" })
+                @Html.DropDownListFor(x => x.TransferPayment.BeneficiaryName, DropdownListGenerator.CustomerNamesGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.Label("Beneficary Account", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
-                @Html.DropDownListFor(x => x.TransferPayment.BeneficiaryAccount, DropdownListGenerator.AccountNumbersGenerator(Model.Individuals), new { @class = "form-control", id = "cb-currency" })
+                @Html.DropDownListFor(x => x.TransferPayment.BeneficiaryAccount, DropdownListGenerator.AccountNumbersGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
             </div>
         </div>
 

@@ -212,6 +212,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
+    <Compile Include="ViewModels\BankManagement\OutputPaymentModel.cs" />
     <Compile Include="Controllers\TransactionCheckController.cs" />
     <Compile Include="Controllers\TransferPaymentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,7 @@
     <Compile Include="ViewModels\BankManagement\TransactionViewModel.cs" />
     <Compile Include="ViewModels\BankManagement\TransferPaymentInputViewModel.cs" />
     <Compile Include="ViewModels\BankManagement\TransferPaymentViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\UserForPaymentsViewModel.cs" />
     <Compile Include="ViewModels\Feedback\FeedbackInputModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />

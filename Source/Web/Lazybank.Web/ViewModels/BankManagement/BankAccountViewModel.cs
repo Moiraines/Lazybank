@@ -19,7 +19,5 @@ namespace Lazybank.Web.ViewModels
         public CurrencyType Currency { get; set; }
 
         public decimal Balance { get; set; }
-
-        public ICollection<TransferPaymentInputViewModel> TransferPayments { get; set; }
     }
 }
