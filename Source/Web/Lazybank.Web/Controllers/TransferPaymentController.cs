@@ -47,16 +47,21 @@ namespace Lazybank.Web.Controllers
 
             var model = globalModel.TransferPayment;
 
+            var userId = this.User.Identity.GetUserId();
+            var currentUser = this.users.GetById(userId);
+            var newGlobalModel = globalModel;
             if (model.BeneficiaryAccount == model.OrderingAccount)
             {
+                newGlobalModel.User = this.Mapper.Map<UserForPaymentsViewModel>(currentUser);
                 this.TempData["Account Duplicate"] = "Order and Beneficary Account can not be the same!";
-                return this.View(globalModel);
+                return this.View(newGlobalModel);
             }
 
             if (model.OrderingName == model.BeneficiaryName)
             {
+                newGlobalModel.User = this.Mapper.Map<UserForPaymentsViewModel>(currentUser);
                 this.TempData["Customer Name Duplicate"] = "Order and Beneficary Name can not be the same!";
-                return this.View(globalModel);
+                return this.View(newGlobalModel);
             }
 
             var newPayment = this.Mapper.Map<TransferPayment>(model);
