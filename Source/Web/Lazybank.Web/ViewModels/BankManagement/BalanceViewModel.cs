@@ -10,5 +10,8 @@
         public ICollection<CompanyViewModel> Companies { get; set; }
 
         public ICollection<IndividualViewModel> Individuals { get; set; }
+
+        public TransferPaymentInputViewModel TransferPayment { get; set; }
+
     }
 }

@@ -217,6 +217,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DropdownListGenerator.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
@@ -230,6 +231,9 @@
     <Compile Include="ViewModels\BankManagement\BankAccountViewModel.cs" />
     <Compile Include="ViewModels\BankManagement\CompanyViewModel.cs" />
     <Compile Include="ViewModels\BankManagement\IndividualViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\TransferPaymentInputViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\TransferPaymentViewModel.cs" />
     <Compile Include="ViewModels\Feedback\FeedbackInputModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
@@ -426,6 +430,9 @@
     <Content Include="Views\BalanceCheck\Index.cshtml" />
     <Content Include="Views\BalanceCheck\_PartialBalance.cshtml" />
     <Content Include="Views\BalanceCheck\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\TransferPayment\Index.cshtml" />
+    <Content Include="Views\TransferPayment\Create.cshtml" />
+    <Content Include="Views\TransferPayment\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -436,7 +443,6 @@
     <Folder Include="Areas\Public\Views\Shared\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\TransactionCheck\" />
-    <Folder Include="Views\TransferPayment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

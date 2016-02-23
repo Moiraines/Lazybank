@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Lazybank.Services.Data;
+using Lazybank.Web.ViewModels;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,12 +9,24 @@ using System.Web.Mvc;
 
 namespace Lazybank.Web.Controllers
 {
-    public class TransferPaymentController : Controller
+    [Authorize]
+    public class TransferPaymentController : BaseController
     {
-        // GET: TransferPayment
-        public ActionResult Index()
+        private IUsersService users;
+
+        public TransferPaymentController(IUsersService users)
         {
-            return View();
+            this.users = users;
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            var userId = this.User.Identity.GetUserId();
+            var currentUser = this.users.GetById(userId);
+            var viewModel = this.Mapper.Map<BalanceViewModel>(currentUser);
+
+            return this.View(viewModel);
         }
     }
 }

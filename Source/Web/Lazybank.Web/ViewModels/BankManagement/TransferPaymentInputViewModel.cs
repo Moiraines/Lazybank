@@ -1,14 +1,13 @@
-﻿namespace Lazybank.Data.Models
-{
-    using System.ComponentModel.DataAnnotations;
+﻿using Lazybank.Data.Models;
+using Lazybank.Web.Infrastructure.Mapping;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
-    using Lazybank.Data.Common.Models;
-    using System;
-    public abstract class Payment : BaseModel<int>
+namespace Lazybank.Web.ViewModels
+{
+    public class TransferPaymentInputViewModel : IMapTo<TransferPayment>
     {
-        [Required]
-        [StringLength(22)]
-        [MinLength(22)]
         public string OrderingAccount { get; set; }
 
         [Required]
@@ -28,18 +27,12 @@
         [Range(0, long.MaxValue)]
         public decimal Amount { get; set; }
 
-        public bool IsSigned { get; set; }
-
-        public StatusType Status { get; set; }
-
         [Required]
         [StringLength(120)]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Details")]
         public string PaymentDetails { get; set; }
 
-        public DateTime ExpirationDate { get; set; }
-
         public int AccountId { get; set; }
-
-        public virtual BankAccount Account { get; set; }
     }
 }

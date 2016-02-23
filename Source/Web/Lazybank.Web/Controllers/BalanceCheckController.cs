@@ -4,23 +4,18 @@ using Lazybank.Services.Data;
 using Lazybank.Web.Infrastructure.Mapping;
 using Lazybank.Web.ViewModels;
 using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
 namespace Lazybank.Web.Controllers
 {
+    using System.Web.Mvc;
+
+    [Authorize]
     public class BalanceCheckController : BaseController
     {
         private IUsersService users;
-        private IBankAccountsService accounts;
 
-        public BalanceCheckController(IUsersService users, IBankAccountsService accounts)
+        public BalanceCheckController(IUsersService users)
         {
             this.users = users;
-            this.accounts = accounts;
         }
 
         // GET: BalanceCheck
