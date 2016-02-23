@@ -71,6 +71,38 @@ namespace Lazybank.Web.Controllers
             newPayment.Status = StatusType.Completed;
             this.payments.Create(newPayment);
 
+
+            // TODO: Extract Copy Transaction logic
+            var transaction = new Transaction
+            {
+                OrderingAccount = newPayment.OrderingAccount,
+                BeneficiaryAccount = newPayment.BeneficiaryAccount,
+                OrderingName = newPayment.OrderingName,
+                BeneficiaryName = newPayment.BeneficiaryName,
+                Currency = newPayment.Currency,
+                Amount = newPayment.Amount,
+                PaymentDetails = newPayment.PaymentDetails,
+                CreatedOn = newPayment.CreatedOn,
+                AccountId = newPayment.AccountId,
+                TransactionType = TransactionType.Debit
+            };
+            this.transactions.Create(transaction);
+
+            var transactionRereversed = new Transaction
+            {
+                OrderingAccount = newPayment.OrderingAccount,
+                BeneficiaryAccount = newPayment.BeneficiaryAccount,
+                OrderingName = newPayment.OrderingName,
+                BeneficiaryName = newPayment.BeneficiaryName,
+                Currency = newPayment.Currency,
+                Amount = newPayment.Amount,
+                PaymentDetails = newPayment.PaymentDetails,
+                CreatedOn = newPayment.CreatedOn,
+                AccountId = this.accounts.GetId(model.BeneficiaryAccount),
+                TransactionType = TransactionType.Credit
+            };
+            this.transactions.Create(transactionRereversed);
+
             this.TempData["Notification"] = "Payment succesfully made!";
             return this.Redirect("/MovementCheck");
         }
