@@ -18,6 +18,8 @@
 
         public string OrderingName { get; set; }
 
+        public string OrderingBank { get; set; }
+
         public string BeneficiaryName { get; set; }
 
         public CurrencyType Currency { get; set; }
