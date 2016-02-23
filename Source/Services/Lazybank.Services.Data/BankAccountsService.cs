@@ -23,5 +23,12 @@
         {
             throw new NotImplementedException();
         }
+
+        public int GetId(string name)
+        {
+            var account = this.accounts.All().FirstOrDefault(x => x.Number == name);
+
+            return account.Id;
+        }
     }
 }

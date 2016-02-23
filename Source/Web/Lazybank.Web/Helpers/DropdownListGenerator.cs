@@ -29,7 +29,6 @@
             List<SelectListItem> customerNames = new List<SelectListItem>();
             foreach (var customer in individuals)
             {
-
                 customerNames.Add(
                 new SelectListItem
                 {
@@ -56,6 +55,7 @@
                         });
                 }
             }
+
             return accounts;
         }
     }

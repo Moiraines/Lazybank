@@ -8,5 +8,7 @@ namespace Lazybank.Services.Data
         IQueryable<BankAccount> GetAll();
 
         int Create(BankAccount modelToSave);
+
+        int GetId(string name);
     }
 }

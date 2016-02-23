@@ -8,17 +8,19 @@ namespace Lazybank.Web.ViewModels
 {
     public class TransferPaymentInputViewModel : IMapTo<TransferPayment>
     {
+        [Required]
         public string OrderingAccount { get; set; }
 
         [Required]
-        [StringLength(22)]
-        [MinLength(22)]
         public string BeneficiaryAccount { get; set; }
 
+        [Required]
         public string OrderingName { get; set; }
 
+        [Required]
         public string OrderingBank { get; set; }
 
+        [Required]
         public string BeneficiaryName { get; set; }
 
         public CurrencyType Currency { get; set; }

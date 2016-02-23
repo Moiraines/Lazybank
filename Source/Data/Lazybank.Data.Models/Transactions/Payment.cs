@@ -36,7 +36,7 @@
         [StringLength(120)]
         public string PaymentDetails { get; set; }
 
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
 
         public int AccountId { get; set; }
 
