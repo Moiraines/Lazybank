@@ -19,28 +19,7 @@
                         </h4>
                     </div>
                     <div class="row">
-                        @(Html.Kendo()
-                            .Grid<Lazybank.Web.ViewModels.BankAccountViewModel>()
-                            .Name("grid")
-                            .Columns(columns =>
-                                 {
-                                 columns.Bound(col => col.Number);
-                                 columns.Bound(col => col.Balance).EditorTemplateName("Currency");
-                                 columns.Bound(col => col.Currency);
-                            })
-                            .ColumnMenu()
-                            .Pageable(page => page.Refresh(true))
-                            .Sortable(sort => sort.SortMode(GridSortMode.MultipleColumn))
-                            .Groupable()
-                            .Filterable()
-                            .DataSource(data =>
-                            {
-                                data
-                                .Ajax()
-                                .PageSize(5)
-                                .Sort(sort => sort.Add(account => account.Number))
-                                .Read(read => read.Action("Read", "BalanceCheck"));
-                            }))
+                       @{ Html.RenderPartial("_PartialBalance", client.Accounts);  }
                     </div>                  
                 </div>
             </div>

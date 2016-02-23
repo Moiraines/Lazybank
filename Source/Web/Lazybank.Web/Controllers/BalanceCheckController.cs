@@ -32,16 +32,5 @@ namespace Lazybank.Web.Controllers
 
             return this.View(viewModel);
         }
-
-        [HttpPost]
-        public ActionResult Read([DataSourceRequest]DataSourceRequest request)
-        {
-           // var currentClientId = request.Aggregates.
-            var data = this.accounts.GetAll().Where(a => a.IndividualId == (int)this.TempData["currentClient"]);
-            var result = data
-                .ToDataSourceResult(request);
-
-            return this.Json(result);
-        }
     }
 }
