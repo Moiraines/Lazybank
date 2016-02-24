@@ -22,9 +22,24 @@
             return modelToSave.Id;
         }
 
+        public void Save()
+        {
+            this.articles.Save();
+        }
+
+        public void Delete(NewsArticle modelToDelete)
+        {
+            this.articles.Delete(modelToDelete);
+        }
+
         public IQueryable<NewsArticle> GetAll()
         {
             return this.articles.All();
+        }
+
+        public NewsArticle GetById(int id)
+        {
+            return this.articles.GetById(id);
         }
     }
 }
