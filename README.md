@@ -1,5 +1,5 @@
 # Lazybank
-### Web application for online banking services, checking balance and movements. Make different kind of payments etc.
+### Web application for online banking services, checking balance and movements. Making different kind of payments etc.
 
 ## Application structure
 ![Folder structure](https://raw.githubusercontent.com/Moiraines/Lazybank/master/images/structure.jpg)
