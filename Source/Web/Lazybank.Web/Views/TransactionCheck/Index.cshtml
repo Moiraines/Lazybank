@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Lazybank.Web.ViewModels.TransactionViewModel>
+
+
+@(Html.Kendo()
+    .Grid(Model)
+    .Name(Guid.NewGuid().ToString())
+    .Columns(columns =>
+    {
+        columns.Bound(col => col.OrderingAccount);
+        columns.Bound(col => col.Amount);
+        columns.Bound(col => col.Currency);
+        columns.Bound(col => col.TransactionType);
+        columns.Bound(col => col.PaymentDetails);
+        columns.Bound(col => col.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");       
+    })
+    .ColumnMenu()
+    .Pageable(page => page.Refresh(true))
+    .Sortable()
+    .Filterable()
+    .Groupable()
+    .DataSource(d => d.Ajax()
+                .PageSize(5)
+                .Model(model => model.Id(m => m.Id))
+                .ServerOperation(false)))
+

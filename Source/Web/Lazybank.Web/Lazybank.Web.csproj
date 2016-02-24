@@ -445,6 +445,7 @@
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PostViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\TransactionCheck\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -454,7 +455,6 @@
     <Folder Include="Areas\Public\Models\" />
     <Folder Include="Areas\Public\Views\Shared\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\TransactionCheck\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

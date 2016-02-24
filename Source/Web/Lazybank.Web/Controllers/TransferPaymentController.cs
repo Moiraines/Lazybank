@@ -84,6 +84,7 @@ namespace Lazybank.Web.Controllers
             newPayment.AccountId = this.accounts.GetId(model.OrderingAccount);
             newPayment.IsSigned = true;
             newPayment.Status = StatusType.Completed;
+            newPayment.UserId = userId;
             this.payments.Create(newPayment);
 
             // TODO: Extract Copy Transaction logic
@@ -98,6 +99,7 @@ namespace Lazybank.Web.Controllers
                 PaymentDetails = newPayment.PaymentDetails,
                 CreatedOn = newPayment.CreatedOn,
                 AccountId = newPayment.AccountId,
+                UserId = newPayment.UserId,
                 TransactionType = TransactionType.Debit
             };
             this.transactions.Create(transaction);
@@ -113,12 +115,13 @@ namespace Lazybank.Web.Controllers
                 PaymentDetails = newPayment.PaymentDetails,
                 CreatedOn = newPayment.CreatedOn,
                 AccountId = this.accounts.GetId(model.BeneficiaryAccount),
+                UserId = newPayment.UserId,
                 TransactionType = TransactionType.Credit
             };
             this.transactions.Create(transactionRereversed);
 
             this.TempData["Notification"] = "Payment succesfully made!";
-            return this.Redirect("/MovementCheck");
+            return this.Redirect("/OrdersArchive");
         }
     }
 }

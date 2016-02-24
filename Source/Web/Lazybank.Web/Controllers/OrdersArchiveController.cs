@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Lazybank.Web.Controllers
 {
+    [Authorize]
     public class OrdersArchiveController : BaseController
     {
         private IUsersService users;
