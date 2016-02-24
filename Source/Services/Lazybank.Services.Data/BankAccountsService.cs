@@ -30,5 +30,18 @@
 
             return account.Id;
         }
+
+        public BankAccount GetAccount(string name)
+        {
+            var account = this.accounts.All().FirstOrDefault(x => x.Number == name);
+
+            return account;
+        }
+
+        public void BalanceAccounts(BankAccount orderAcc, BankAccount benAcc, decimal transferSum)
+        {
+            orderAcc.Balance = orderAcc.Balance - transferSum;
+            benAcc.Balance = benAcc.Balance + transferSum;
+        }
     }
 }

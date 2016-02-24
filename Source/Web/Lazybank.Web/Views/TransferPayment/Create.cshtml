@@ -21,6 +21,13 @@
     </div>
 }
 
+@if (this.TempData["insufficient funds"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @this.TempData["insufficient funds"]
+    </div>
+}
+
 @using (Html.BeginForm("Create", "TransferPayment", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()

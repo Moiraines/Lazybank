@@ -10,5 +10,9 @@ namespace Lazybank.Services.Data
         int Create(BankAccount modelToSave);
 
         int GetId(string name);
+
+        BankAccount GetAccount(string name);
+
+        void BalanceAccounts(BankAccount orderAcc, BankAccount benAcc, decimal transferSum);
     }
 }

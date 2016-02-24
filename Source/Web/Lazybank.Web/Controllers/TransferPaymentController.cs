@@ -46,10 +46,25 @@ namespace Lazybank.Web.Controllers
             }
 
             var model = globalModel.TransferPayment;
-
+            var newGlobalModel = globalModel;
             var userId = this.User.Identity.GetUserId();
             var currentUser = this.users.GetById(userId);
-            var newGlobalModel = globalModel;
+
+            var orderingAccNumber = model.OrderingAccount;
+            var orderingAccount = this.accounts.GetAccount(orderingAccNumber);
+
+            if (orderingAccount.Balance < model.Amount)
+            {
+                newGlobalModel.User = this.Mapper.Map<UserForPaymentsViewModel>(currentUser);
+                this.TempData["insufficient funds"] = "insufficient funds in the account";
+                return this.View(newGlobalModel);
+            }
+
+            var beneficaryAccNumber = model.BeneficiaryAccount;
+            var beneficaryAccount = this.accounts.GetAccount(beneficaryAccNumber);
+
+            this.accounts.BalanceAccounts(orderingAccount, beneficaryAccount, model.Amount);
+
             if (model.BeneficiaryAccount == model.OrderingAccount)
             {
                 newGlobalModel.User = this.Mapper.Map<UserForPaymentsViewModel>(currentUser);
