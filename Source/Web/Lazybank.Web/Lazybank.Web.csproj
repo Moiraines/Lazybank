@@ -207,13 +207,21 @@
     <Compile Include="Areas\Public\Controllers\NewsArticlesController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BalanceCheckController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
+    <Compile Include="Controllers\OrdersArchiveController.cs" />
+    <Compile Include="ViewModels\BankManagement\OrdersViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\OutputPaymentModel.cs" />
+    <Compile Include="Controllers\TransactionCheckController.cs" />
+    <Compile Include="Controllers\TransferPaymentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DropdownListGenerator.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
@@ -223,6 +231,14 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\BalanceViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\BankAccountViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\IndividualViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\TransferPaymentInputViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\TransferPaymentViewModel.cs" />
+    <Compile Include="ViewModels\BankManagement\UserForPaymentsViewModel.cs" />
     <Compile Include="ViewModels\Feedback\FeedbackInputModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
@@ -416,6 +432,20 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <Content Include="Views\BalanceCheck\Index.cshtml" />
+    <Content Include="Views\BalanceCheck\_PartialBalance.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\TransferPayment\Index.cshtml" />
+    <Content Include="Views\TransferPayment\Create.cshtml" />
+    <Content Include="Views\TransferPayment\Details.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\InternalServer.cshtml" />
+    <Content Include="Views\OrdersArchive\Index.cshtml" />
+    <Content Include="Views\OrdersArchive\_PartialOrderArchive.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PostViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\TransactionCheck\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

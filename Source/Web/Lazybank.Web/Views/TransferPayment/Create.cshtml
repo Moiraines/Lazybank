@@ -1,0 +1,98 @@
+﻿@using Lazybank.Web.ViewModels
+@using Lazybank.Web.Helpers
+
+@model OutputPaymentModel
+@{
+    ViewBag.Title = "Make Transfer";
+}
+<h2>@ViewBag.Title:</h2>
+
+@if (this.TempData["Account Duplicate"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @this.TempData["Account Duplicate"]
+    </div>
+}
+
+@if (this.TempData["Customer Name Duplicate"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @this.TempData["Customer Name Duplicate"]
+    </div>
+}
+
+@if (this.TempData["insufficient funds"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @this.TempData["insufficient funds"]
+    </div>
+}
+
+@using (Html.BeginForm("Create", "TransferPayment", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        <div class="row form-group">
+            @Html.Label("Ordering Name", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(x => x.TransferPayment.OrderingName, DropdownListGenerator.CustomerNamesGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
+            </div>
+            @Html.Label("Ordering Account", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">                
+                @Html.DropDownListFor(x => x.TransferPayment.OrderingAccount, DropdownListGenerator.AccountNumbersGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.TransferPayment.OrderingBank, new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                @Html.EditorFor(m => m.TransferPayment.OrderingBank, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.TransferPayment.OrderingBank, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Beneficary Name", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(x => x.TransferPayment.BeneficiaryName, DropdownListGenerator.CustomerNamesGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Beneficary Account", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(x => x.TransferPayment.BeneficiaryAccount, DropdownListGenerator.AccountNumbersGenerator(Model.User.Individuals), new { @class = "form-control", id = "cb-currency" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.TransferPayment.Amount, new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                @Html.EditorFor(m => m.TransferPayment.Amount, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.TransferPayment.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Currency", new { @class = "col-md-2 control-label" })           
+            <div class="col-md-6">
+                @Html.DropDownListFor(x => x.TransferPayment.Currency, DropdownListGenerator.CurrencyGenerator(), new { @class = "form-control", id = "cb-currency" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.TransferPayment.PaymentDetails, new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                @Html.EditorFor(m => m.TransferPayment.PaymentDetails, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.TransferPayment.PaymentDetails, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-danger" value="Create" />
+            </div>
+        </div>
+        }
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

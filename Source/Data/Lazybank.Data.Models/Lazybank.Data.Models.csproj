@@ -73,8 +73,10 @@
     <Compile Include="Customers\Individual.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transactions\BudgetPayment.cs" />
+    <Compile Include="Transactions\DocumentType.cs" />
     <Compile Include="Transactions\LocalPayment.cs" />
     <Compile Include="Transactions\Payment.cs" />
+    <Compile Include="Transactions\StatusType.cs" />
     <Compile Include="Transactions\Transaction.cs" />
     <Compile Include="Transactions\TransactionType.cs" />
     <Compile Include="Transactions\TransferPayment.cs" />

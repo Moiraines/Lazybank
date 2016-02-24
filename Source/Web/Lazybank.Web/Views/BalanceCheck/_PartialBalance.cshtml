@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Lazybank.Web.ViewModels.BankAccountViewModel>
+
+
+@(Html.Kendo()
+    .Grid(Model)
+    .Name(Guid.NewGuid().ToString())
+    .Columns(columns =>
+    {
+        columns.Bound(col => col.Number);
+        columns.Bound(col => col.Balance);
+        columns.Bound(col => col.Currency);
+    })
+    .ColumnMenu()
+    .Pageable(page => page.Refresh(true))
+    .Sortable()
+    .Filterable()
+    .Groupable()
+    .DataSource(d => d.Ajax()
+                .PageSize(5)
+                .Model(model => model.Id(m => m.Id))
+                .ServerOperation(false)))

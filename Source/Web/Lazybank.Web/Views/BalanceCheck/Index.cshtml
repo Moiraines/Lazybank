@@ -1,0 +1,58 @@
+﻿@model Lazybank.Web.ViewModels.BalanceViewModel
+@{
+    ViewBag.Title = "Your balance";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<div class="container">
+    @if (Model.Individuals.Any())
+    {
+        foreach (var client in Model.Individuals)
+        {
+            <div class="row">
+                <div class="col-md-12" style="padding-right:30px">
+                    <div class="row">
+                        <h4>
+                            @client.Name
+                        </h4>
+                    </div>
+                    <div class="row">
+                       @{ Html.RenderPartial("_PartialBalance", client.Accounts);  }
+                    </div>                  
+                </div>
+            </div>
+            <hr />
+        }
+    }
+
+    @if (Model.Companies.Any())
+    {
+        foreach (var client in Model.Companies)
+        {
+            <div class="row">
+                <div class="col-md-12" style="padding-right:30px">
+                    <div class="row">
+                        <h4>
+                            @client.Name
+                        </h4>
+                    </div>
+                    <div class="row">
+                        @if (client.Accounts.Any())
+                        {
+                            foreach (var account in client.Accounts)
+                            {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @account.Number
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <hr />
+        }
+    }
+</div>
