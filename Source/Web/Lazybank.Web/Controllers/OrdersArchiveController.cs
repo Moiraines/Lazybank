@@ -22,6 +22,7 @@
         }
 
         // GET: BalanceCheck
+        //[OutputCache(Duration = 2 * 60)]
         public ActionResult Index()
         {
             var userId = this.User.Identity.GetUserId();
