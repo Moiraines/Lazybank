@@ -15,12 +15,16 @@
         private ICollection<Individual> individuals;
         private ICollection<Company> companies;
         private ICollection<RightContainer> rights;
+        private ICollection<TransferPayment> payments;
+        private ICollection<Transaction> transactions;
 
         public ApplicationUser()
         {
             this.individuals = new HashSet<Individual>();
             this.companies = new HashSet<Company>();
             this.rights = new HashSet<RightContainer>();
+            this.payments = new HashSet<TransferPayment>();
+            this.transactions = new HashSet<Transaction>();
             this.CreatedOn = DateTime.Now;
         }
 
@@ -68,6 +72,32 @@
             set
             {
                 this.rights = value;
+            }
+        }
+
+        public virtual ICollection<TransferPayment> Payments
+        {
+            get
+            {
+                return this.payments;
+            }
+
+            set
+            {
+                this.payments = value;
+            }
+        }
+
+        public virtual ICollection<Transaction> Transactions
+        {
+            get
+            {
+                return this.transactions;
+            }
+
+            set
+            {
+                this.transactions = value;
             }
         }
 
