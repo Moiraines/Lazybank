@@ -28,5 +28,4 @@ namespace Lazybank.Web
             get { return RuntimeEvent.EndRequest | RuntimeEvent.ExecuteResource; }
         }
     }
-}
-*/
+}*/

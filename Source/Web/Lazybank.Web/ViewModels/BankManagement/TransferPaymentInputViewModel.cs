@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
     using Lazybank.Data.Models;
     using Lazybank.Web.Infrastructure.Mapping;
-    
+
     public class TransferPaymentInputViewModel : IMapTo<TransferPayment>
     {
         [Required]

@@ -37,7 +37,7 @@
             }
 
             int day = int.Parse(personalIDNumber.Substring(4, 2));
-            DateTime dateOfBirth = new DateTime();
+            DateTime dateOfBirth = new DateTime { };
             if (!DateTime.TryParse(string.Format("{0}/{1}/{2}", day, month, year), out dateOfBirth))
             {
                 return false;
