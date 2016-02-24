@@ -207,6 +207,7 @@
     <Compile Include="Areas\Administration\Controllers\NewsArticleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\TransactionsAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\UserAdministrationController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\NewsArticleViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
     <Compile Include="Areas\Public\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Public\Controllers\NewsArticlesController.cs" />
@@ -393,6 +394,7 @@
     <Content Include="Areas\Public\Views\NewsArticles\EditorTemplates\UploadTemplate.cshtml" />
     <Content Include="Areas\Public\Views\NewsArticles\Details.cshtml" />
     <Content Include="Areas\Public\Views\Feedbacks\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\NewsArticleAdministration\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -457,7 +459,6 @@
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\CustomersAdministration\" />
     <Folder Include="Areas\Administration\Views\FeedbackAdministration\" />
-    <Folder Include="Areas\Administration\Views\NewsArticleAdministration\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Administration\Views\TransactionsAdministration\" />
     <Folder Include="Areas\Public\Models\" />

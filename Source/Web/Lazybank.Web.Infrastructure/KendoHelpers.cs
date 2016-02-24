@@ -35,6 +35,7 @@
                 .DataSource(data =>
                     data
                         .Ajax()
+                        .PageSize(5)
                         .Model(m => m.Id(modelIdExpression))
                         .Read(read => read.Action("Read", controllerName))
                         .Create(create => create.Action("Create", controllerName))

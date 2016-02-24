@@ -1,0 +1,15 @@
+﻿@using Lazybank.Web.Infrastructure;
+@model Lazybank.Web.Areas.Administration.ViewModels.NewsArticleViewModel
+
+@(Html.FullFeaturedGrid<Lazybank.Web.Areas.Administration.ViewModels.NewsArticleViewModel>(
+    "NewsArticleAdministration",
+    m => m.Id,
+    columns =>
+    {
+        columns.Bound(col => col.Id);
+        columns.Bound(col => col.Title).ClientTemplate("<a href='Details/#= Title #'>#= Title #</a>");
+        columns.Bound(col => col.ImageUrl).Title("Image").ClientTemplate(@"<img src='../../../../#:ImageUrl#' width=200 height=150>");
+        columns.Bound(col => col.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
+        columns.Command(com => com.Edit().Text("Edit")).Width(100);
+        columns.Command(com => com.Destroy().Text("Delete")).Width(100);
+    }))
