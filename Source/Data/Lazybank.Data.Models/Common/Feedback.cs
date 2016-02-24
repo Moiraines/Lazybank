@@ -1,13 +1,8 @@
-﻿using Lazybank.Data.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lazybank.Data.Models
+﻿namespace Lazybank.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using Lazybank.Data.Common.Models;
+
     public class Feedback : BaseModel<int>
     {
         public string AuthorId { get; set; }

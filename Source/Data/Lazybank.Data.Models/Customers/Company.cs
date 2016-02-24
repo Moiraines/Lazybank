@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Lazybank.Data.Models
+﻿namespace Lazybank.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Company : Customer
     {
         [Required]

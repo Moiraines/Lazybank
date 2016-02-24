@@ -1,9 +1,9 @@
 ﻿namespace Lazybank.Data.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     using Lazybank.Data.Common.Models;
-    using System;
 
     public abstract class Payment : BaseModel<int>
     {

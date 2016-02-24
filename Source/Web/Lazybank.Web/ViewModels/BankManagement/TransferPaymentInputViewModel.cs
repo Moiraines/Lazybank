@@ -1,11 +1,9 @@
-﻿using Lazybank.Data.Models;
-using Lazybank.Web.Infrastructure.Mapping;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
-
-namespace Lazybank.Web.ViewModels
+﻿namespace Lazybank.Web.ViewModels
 {
+    using System.ComponentModel.DataAnnotations;
+    using Lazybank.Data.Models;
+    using Lazybank.Web.Infrastructure.Mapping;
+    
     public class TransferPaymentInputViewModel : IMapTo<TransferPayment>
     {
         [Required]

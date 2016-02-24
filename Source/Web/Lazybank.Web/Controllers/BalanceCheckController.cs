@@ -1,12 +1,12 @@
-﻿using Kendo.Mvc.Extensions;
-using Kendo.Mvc.UI;
-using Lazybank.Services.Data;
-using Lazybank.Web.Infrastructure.Mapping;
-using Lazybank.Web.ViewModels;
-using Microsoft.AspNet.Identity;
-namespace Lazybank.Web.Controllers
+﻿namespace Lazybank.Web.Controllers
 {
     using System.Web.Mvc;
+    using Kendo.Mvc.Extensions;
+    using Kendo.Mvc.UI;
+    using Lazybank.Services.Data;
+    using Lazybank.Web.Infrastructure.Mapping;
+    using Lazybank.Web.ViewModels;
+    using Microsoft.AspNet.Identity;
 
     [Authorize]
     public class BalanceCheckController : BaseController

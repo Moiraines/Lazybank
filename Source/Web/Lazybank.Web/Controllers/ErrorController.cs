@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Lazybank.Web.Controllers
+﻿namespace Lazybank.Web.Controllers
 {
+    using System.Web.Mvc;
+
     public class ErrorController : BaseController
     {
         // GET: Error

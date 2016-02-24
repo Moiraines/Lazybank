@@ -20,8 +20,8 @@
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include("~/Scripts/KendoUI/kendo.all.min.js", "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
-            bundles.Add(new ScriptBundle("~/bundles/js-kendo-listview").Include( "~/Scripts/Kendo/kendo.listview.min.js"));
-            bundles.Add(new ScriptBundle("~/bundles/js-kendo-datetimepicker").Include( "~/Scripts/Kendo/kendo.datetimepicker.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/js-kendo-listview").Include("~/Scripts/Kendo/kendo.listview.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/js-kendo-datetimepicker").Include("~/Scripts/Kendo/kendo.datetimepicker.min.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)

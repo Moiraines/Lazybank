@@ -1,21 +1,18 @@
-﻿using Kendo.Mvc.Extensions;
-using Kendo.Mvc.UI;
-using Lazybank.Common;
-using Lazybank.Services.Data;
-using Lazybank.Web.ViewModels;
-using Lazybank.Web.Controllers;
-using Lazybank.Web.Infrastructure.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Lazybank.Data;
-using Lazybank.Services.Web;
-using Microsoft.AspNet.Identity;
-
-namespace Lazybank.Web.Areas.Public.Controllers
+﻿namespace Lazybank.Web.Areas.Public.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Web.Mvc;
+    using Kendo.Mvc.Extensions;
+    using Lazybank.Common;
+    using Lazybank.Data;
+    using Lazybank.Services.Data;
+    using Lazybank.Services.Web;
+    using Lazybank.Web.Controllers;
+    using Lazybank.Web.Infrastructure.Mapping;
+    using Lazybank.Web.ViewModels;
+    using Microsoft.AspNet.Identity;
+
     public class NewsArticlesController : BaseController
     {
         private const int ItemsPerPage = 3;

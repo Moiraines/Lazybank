@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-
-namespace Lazybank.Services.Web
+﻿namespace Lazybank.Services.Web
 {
+    using System.Web;
+
     public class NewsArticleImageUploadProvider
     {
         public string Save(HttpServerUtilityBase server, HttpPostedFileBase file)

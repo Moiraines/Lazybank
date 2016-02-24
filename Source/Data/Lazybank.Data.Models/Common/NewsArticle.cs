@@ -1,15 +1,11 @@
-﻿using Lazybank.Data.Common.Models;
-using Lazybank.Data.Models;
-using Lazybank.Common;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lazybank.Data
+﻿namespace Lazybank.Data
 {
+    using System.ComponentModel.DataAnnotations;
+
+    using Lazybank.Common;
+    using Lazybank.Data.Common.Models;
+    using Lazybank.Data.Models;
+
     public class NewsArticle : BaseModel<int>
     {
         [Required]

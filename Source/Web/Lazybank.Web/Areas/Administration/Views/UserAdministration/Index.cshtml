@@ -1,0 +1,14 @@
+﻿@*@using Lazybank.Web.Infrastructure;
+@model Lazybank.Web.ViewModels.
+
+@(Html.Lazybank.Web.ViewModels.>(
+    "Students",
+    m => m.Id,
+    columns =>
+    {
+        columns.Bound(col => col.Id);
+        columns.Bound(col => col.Name).ClientTemplate("<a href='Details/#= Name #'>#= Name #</a>");
+        columns.Bound(col => col.SomeDate).Title("Reg date").Hidden();
+        columns.Command(com => com.Edit().Text("Смени")).Width(100);
+        columns.Command(com => com.Destroy().Text("Мани")).Width(100);
+    }))*@

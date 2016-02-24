@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lazybank.Data.Models;
-using Lazybank.Data.Common;
-
-namespace Lazybank.Services.Data
+﻿namespace Lazybank.Services.Data
 {
+    using System.Linq;
+    using Lazybank.Data.Common;
+    using Lazybank.Data.Models;
+
     public class TransferPaymentsService : ITransferPaymentsService
     {
         private readonly IDbRepository<TransferPayment> transferPayments;

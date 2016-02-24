@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Lazybank.Common
+﻿namespace Lazybank.Common
 {
+    using System;
+
     public static class ValidatorIDNumber
     {
         public static bool ValidatePersonalIDNumber(string personalIDNumber)
@@ -102,6 +102,7 @@ namespace Lazybank.Common
             {
                 return false;
             }
+
             if (companyIDNumber.Length == 13)
             {
                 int[] weight1 = { 2, 7, 3, 5 };

@@ -1,15 +1,12 @@
 ﻿namespace Lazybank.Web
 {
     using System;
-
+    using Lazybank.Data;
+    using Lazybank.Data.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
-
-    using Lazybank.Data;
-    using Lazybank.Data.Models;
-
     using Owin;
 
     public partial class Startup

@@ -1,13 +1,11 @@
-﻿using Lazybank.Data.Common;
-using Lazybank.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lazybank.Services.Data
+﻿namespace Lazybank.Services.Data
 {
+    using System;
+    using System.Linq;
+
+    using Lazybank.Data.Common;
+    using Lazybank.Data.Models;
+
     public class FeedbacksService : IFeedbacksService
     {
         private readonly IDbRepository<Feedback> feedbacks;

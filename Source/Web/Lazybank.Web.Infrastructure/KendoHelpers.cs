@@ -1,14 +1,15 @@
 ﻿namespace Lazybank.Web.Infrastructure
 {
-    using Kendo.Mvc.UI;
-    using Kendo.Mvc.UI.Fluent;
     using System;
     using System.Linq.Expressions;
     using System.Web.Mvc;
+    using Kendo.Mvc.UI;
+    using Kendo.Mvc.UI.Fluent;
 
     public static class KendoHelpers
     {
-        public static GridBuilder<T> FullFeaturedGrid<T>(this HtmlHelper helper, string controllerName, Expression<Func<T, object>> modelIdExpression, Action<GridColumnFactory<T>> columns = null) where T : class
+        public static GridBuilder<T> FullFeaturedGrid<T>(this HtmlHelper helper, string controllerName, Expression<Func<T, object>> modelIdExpression, Action<GridColumnFactory<T>> columns = null)
+            where T : class
         {
             if (columns == null)
             {
@@ -38,8 +39,7 @@
                         .Read(read => read.Action("Read", controllerName))
                         .Create(create => create.Action("Create", controllerName))
                         .Update(update => update.Action("Update", controllerName))
-                        .Destroy(destroy => destroy.Action("Destroy", controllerName))
-                        );
+                        .Destroy(destroy => destroy.Action("Destroy", controllerName)));
         }
     }
 }

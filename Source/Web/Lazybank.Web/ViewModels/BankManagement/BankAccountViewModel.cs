@@ -1,14 +1,9 @@
-﻿using Lazybank.Data.Models;
-using Lazybank.Web.Infrastructure.Mapping;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Lazybank.Web.ViewModels
+﻿namespace Lazybank.Web.ViewModels
 {
+    using System.ComponentModel.DataAnnotations;
+    using Lazybank.Data.Models;
+    using Lazybank.Web.Infrastructure.Mapping;
+
     public class BankAccountViewModel : IMapFrom<BankAccount>
     {
         public int Id { get; set; }

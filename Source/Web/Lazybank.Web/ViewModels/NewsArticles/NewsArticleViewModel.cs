@@ -36,15 +36,15 @@
             }
         }
 
-        //public string ShortContent
-        //{
+        // public string ShortContent
+        // {
         //    get
         //    {
         //        int lastSpace = this.Content.LastIndexOf(' ', this.Content.Length > GlobalConstants.NewsArticleShortContentLength ? GlobalConstants.NewsArticleShortContentLength : this.Content.Length - 1);
         //        string shortContent = this.Content.Substring(0, lastSpace);
         //        return $"{shortContent} ...";
         //    }
-        //}
+        ////  }
 
         public DateTime CreatedOn { get; set; }
     }

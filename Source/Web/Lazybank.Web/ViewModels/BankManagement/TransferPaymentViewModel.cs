@@ -1,10 +1,11 @@
-﻿using Lazybank.Data.Models;
-using Lazybank.Web.Infrastructure.Mapping;
-using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Lazybank.Web.ViewModels
+﻿namespace Lazybank.Web.ViewModels
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
+    using Lazybank.Data.Models;
+    using Lazybank.Web.Infrastructure.Mapping;
+
     public class TransferPaymentViewModel : IMapFrom<TransferPayment>
     {
         public int Id { get; set; }

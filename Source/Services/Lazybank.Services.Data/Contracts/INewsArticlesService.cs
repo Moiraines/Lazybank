@@ -1,7 +1,7 @@
 ﻿namespace Lazybank.Services.Data
 {
-    using Lazybank.Data;
     using System.Linq;
+    using Lazybank.Data;
 
     public interface INewsArticlesService
     {

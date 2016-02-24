@@ -5,10 +5,8 @@
     using System.Linq;
 
     using Common.Models;
-
-    using Microsoft.AspNet.Identity.EntityFramework;
-
     using Lazybank.Data.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Migrations;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

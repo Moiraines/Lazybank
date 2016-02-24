@@ -1,8 +1,8 @@
-﻿using Lazybank.Data.Models;
-using System.Linq;
-
-namespace Lazybank.Services.Data
+﻿namespace Lazybank.Services.Data
 {
+    using System.Linq;
+    using Lazybank.Data.Models;
+
     public interface IBankAccountsService
     {
         IQueryable<BankAccount> GetAll();

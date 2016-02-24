@@ -202,7 +202,12 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
-    <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\CustomersAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\FeedbackAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\NewsArticleAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\TransactionsAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UserAdministrationController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
     <Compile Include="Areas\Public\Controllers\FeedbacksController.cs" />
     <Compile Include="Areas\Public\Controllers\NewsArticlesController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
@@ -379,7 +384,7 @@
     <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.woff" />
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
-    <Content Include="Areas\Administration\Views\Administration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\UserAdministration\Index.cshtml" />
     <Content Include="img\Press_Release_Example_The_Landon_Hotel.pdf" />
     <Content Include="Areas\Public\Views\web.config" />
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
@@ -450,8 +455,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\ViewModels\" />
+    <Folder Include="Areas\Administration\Views\CustomersAdministration\" />
+    <Folder Include="Areas\Administration\Views\FeedbackAdministration\" />
+    <Folder Include="Areas\Administration\Views\NewsArticleAdministration\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Administration\Views\TransactionsAdministration\" />
     <Folder Include="Areas\Public\Models\" />
     <Folder Include="Areas\Public\Views\Shared\" />
     <Folder Include="Views\Base\" />

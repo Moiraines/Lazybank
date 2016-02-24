@@ -1,12 +1,13 @@
-﻿using Lazybank.Services.Data;
-using Lazybank.Web.ViewModels;
-using Microsoft.AspNet.Identity;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-
-namespace Lazybank.Web.Controllers
+﻿namespace Lazybank.Web.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using Lazybank.Services.Data;
+    using Lazybank.Web.ViewModels;
+    using Microsoft.AspNet.Identity;
+
     [Authorize]
     public class TransactionCheckController : BaseController
     {
